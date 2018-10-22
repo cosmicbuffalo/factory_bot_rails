@@ -5,6 +5,8 @@ require "factory_bot_rails/generator"
 require "factory_bot_rails/reloader"
 require "rails"
 
+FactoryGirl = FactoryBot
+
 module FactoryBotRails
   class Railtie < Rails::Railtie
     config.factory_bot = ActiveSupport::OrderedOptions.new
@@ -23,7 +25,6 @@ module FactoryBotRails
     end
 
     config.after_initialize do
-      FactoryGirl = FactoryBot
       FactoryBot.find_definitions
     end
 
@@ -36,3 +37,4 @@ module FactoryBotRails
     end
   end
 end
+
