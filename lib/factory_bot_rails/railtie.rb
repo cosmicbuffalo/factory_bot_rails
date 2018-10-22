@@ -23,6 +23,7 @@ module FactoryBotRails
     end
 
     config.after_initialize do
+      FactoryGirl = FactoryBot
       FactoryBot.find_definitions
     end
 
